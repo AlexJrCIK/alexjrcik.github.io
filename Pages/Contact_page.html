@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="This is an iteractive site designed to help customers select the wine that is best suited for them" content="">
+    <meta name="Alex DeCuzzi" content="Wines found at GC Marketplace">
+    <!--fav icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./favicons/manifest.json">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="icon" href="./favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Contact page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./navbar-static-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="./assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" id="Top of page" style="color: #84c460;">GC Wine Finder</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse"</a>
+          <ul class="nav navbar-nav">
+            <li><a href="Home_page.html">Home</a></li>
+            <li><a href="Red_wine.html">Red wine</a></li>
+            <li><a href="Rose_wine.html">Rose wine</a></li>
+            <li><a href="Sparkling_wine.html">Sparkling wine</a></li>
+            <li><a href="White_wine.html">White wine</a></li>
+            <li class="active"><a style="background-color: #84c460;" href="Contact_page.html">Contact</a></li>
+          </ul>
+          <!-- rightside dropdown menu -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GC Marketpalce &nbsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://gcmarketplace.com/">Home page</a></li>
+                <li><a href="http://onlineorders.wawio.com/menu/5464090d8e161c1739460ca1?appid=5464093531131c49501d9b80">Order online</a></li>
+                <li><a href="https://order.postmates.com/gc-marketplace-los-angeles/">Delivery</a></li>
+                <li><a href="http://gcmarketplace.com/catering">Catering</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://gcmarketplace.com/contact_us">Contact info</a></li>
+                <li><a href="http://gcmarketplace.com/mailing_list">Mailing list</a></li>
+              </ul>
+            </li>
+          </ul>
+<!-- end off righ side dropdown -->
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Contact us!</h1>
+        <p>This is where you can leave us feedback as to how we are doing!</p>
+        <!-- This is where the form starts -->
+        <!-- Java scirpt starts here -->
+        <script>
+          function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+          }
+
+          function checkInputBox() {
+            var email = document.getElementById( 'Email-vaification' ).value;
+            var style = document.getElementById( 'Email-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
+            var valid = validateEmail( email );
+            /* upate border of s1 */
+
+            var submitStyle = document.getElementById( 'button' ).style;
+
+
+            if (valid == true) {
+              style.border = "2px solid #00ff00";
+            } else {
+              style.border = "2px solid #ff0000";
+            }
+          }
+
+        </script>
+          <!-- Java script ends here -->
+        <div class="form-group">
+          <label for="exampleInputName">Name</label>
+          <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="Email-vaification" name="email">Email address</label>
+          <input type="email" class="form-control" id="Email-vaification" placeholder="Email"
+                 style="" onkeypress="checkInputBox()"> <!-- id="exampleInputEmail1" -->
+        </div>
+          <div class="form-group">
+            <label for="exampleInputSubject">Subject</label>
+            <input type="text" class="form-control" id="exampleInputSubject" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">Body</label>
+            <input type="text" class="form-control" id="exampleInputBody" placeholder="Body">
+          </div>
+          <a id="button" onclick="valuedInput()" class="btn btn-lg btn-success" role="button">Submit!</a>
+        </form>
+        <!-- form javascript -->
+        <script>
+          function valuedInput() {
+          alert("Thanks for your input!");
+          }
+        </script>
+        <!-- this is where the form ends -->
+
+        <!-- Imbeded map -->
+</br>
+</br>
+        <div class="row">
+            <div class="col-sm-6">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.620679934104!2d-118.35284684993943!3d34.13045942095767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2be53c9e826c1%3A0x6dfdcec6313c5f45!2sGC+Marketplace!5e0!3m2!1sen!2sus!4v1493277010421" width="400" height="300" frameborder="0" style="border:0" allowfullscreen>
+              </iframe>
+            </br></br>
+              <!-- start of modle -->
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal">Enlarge map</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">GC Marketplace</h4>
+                      </div>
+                      <div class="modal-body">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.620853423931!2d-118.35284148478287!3d34.130454980584815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2be53c9e826c1%3A0x6dfdcec6313c5f45!2sGC+Marketplace!5e0!3m2!1sen!2sus!4v1493279662859" width="800" height="600" frameborder="0" style="border:0" allowfullscreen>
+                        </iframe>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end modal -->
+          <div class="container">
+            <div class="col-sm-6">
+              GC MARKETPLACE</br>
+              3315 Cahuenga Blvd W</br>
+              Los Angeles, CA 90068</br>
+              Phone: 323-645-5269</br></br>
+              HOURS OF OPERATION</br>
+              INFORMATION</br>
+              <strong>MONDAY THROUGH FRIDAY</strong></br>
+              BREAKFAST 9AM – 11AM</br>
+              LUNCH 11AM – 4PM</br>
+              </br>
+              <strong>SATURDAY</strong></br>
+              BRUNCH 9AM – 2PM</br>
+              LUNCH 11AM – 4PM</br>
+              </br>
+              <strong>SUNDAY</strong></br>
+              CLOSED</br>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+<a href="#Top of page">Top of page</a>
+</html>

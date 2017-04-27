@@ -1,0 +1,11 @@
+body {
+  min-height: 2000px;
+  background-color: #eeff00;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+
+/* box my form, add logo instead of welcome, create own contact page add more to the form like check boxes for  */
