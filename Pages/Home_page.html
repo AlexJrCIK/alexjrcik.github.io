@@ -141,9 +141,60 @@
           </iframe>
         </br>
       </div>
-    </div>
+<!-- stopwatch -->
+      </br>
+      <div>
+        <p>Curious as to how long your food is taking? Keep track here!</p>
+        <h2><time>00:00:00</time></h2>
+      </br>
+        <a id="start" class="btn btn-lg btn-success" role="button">Start</a>
+        <a id="stop" class="btn btn-lg btn-success" role="button">Stop</a>
+        <a id="clear" class="btn btn-lg btn-success" role="button">Clear</a>
+      </div>
+      <script>
+        var h2 = document.getElementsByTagName('h2')[0],
+        start = document.getElementById('start'),
+        stop = document.getElementById('stop'),
+        clear = document.getElementById('clear'),
+        seconds = 0, minutes = 0, hours = 0,
+        t;
 
-    </div> <!-- /container -->
+        function add() {
+        seconds++;
+        if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+          }
+        }
+
+        h2.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+        timer();
+        }
+        function timer() {
+        t = setTimeout(add, 1000);
+        }
+        timer();
+
+        /* Start button */
+        start.onclick = timer;
+
+        /* Stop button */
+        stop.onclick = function() {
+            clearTimeout(t);
+        }
+
+        /* Clear button */
+        clear.onclick = function() {
+            h2.textContent = "00:00:00";
+            seconds = 0; minutes = 0; hours = 0;
+        }
+      </script>
+    </div>
+  </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript

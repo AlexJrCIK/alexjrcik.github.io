@@ -50,7 +50,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="Top of page" style="color: #84c460;">GC Wine Finder</a>
+          <a class="navbar-brand" id="TopOfPage" style="color: #84c460;">GC Wine Finder</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse"</a>
           <ul class="nav navbar-nav">
@@ -88,6 +88,7 @@
       <div class="jumbotron">
 
         <p>If you hover your mouse over a blended wine, you will be able to see the type of grapes used!</p>
+
       <!-- This is where the table starts -->
 <!-- CSS table color -->
 <style media="screen" type="text/css">
@@ -106,8 +107,8 @@ tr:nth-child(odd) {
           <th>Name</th>
           <th>Location</th>
           <th>Year</th>
-          <th>Dine-in Price</th>
-          <th>To-go Price</th>
+          <th class="text-right">Dine-in Price</th>
+          <th class="text-right">To-go Price</th>
         </tr>
         <!-- Cabernet Sauvignon -->
         <tr>
@@ -130,7 +131,7 @@ tr:nth-child(odd) {
           <td>Cabernet Sauvignon</td>
           <td class="OnSale">Castoro Cellars</td>
           <td>CA, Paso Robles</td>
-          <td></td>
+          <td>2015</td>
           <td align="right">$25.00</td>
           <td align="right">$18.75</td>
         </tr>
@@ -146,7 +147,7 @@ tr:nth-child(odd) {
         <tr>
           <td>Pinot Noir</td>
           <td>Melville</td>
-          <td>CA, Santa Rita Hilss</td>
+          <td>CA, Santa Rita Hills</td>
           <td>2013</td>
           <td align="right">$45.00</td>
           <td align="right">$33.75</td>
@@ -368,6 +369,60 @@ tr:nth-child(odd) {
       <div>
         <a onclick="changeColor()" class="btn btn-lg btn-success" role="button">Items that are on sale</a>
       </div>
+<!-- Start of wine finder -->
+      <div>
+      </br>
+<head>
+  <script>
+  function wineAction()
+  {
+  var wineStyle = document.getElementById('wine');
+  wineStyle.style.display = 'block';
+  var a = document.getElementById('wineType');
+  if (a.value == 'dry') {
+    document.getElementById('dry_wine').style.display = 'block';
+    document.getElementById('sweet_wine').style.display = 'none';
+  } else {
+    document.getElementById('dry_wine').style.display = 'none';
+    document.getElementById('sweet_wine').style.display = 'block';
+  }
+  // disable other
+  }
+
+  function toggleOther() {
+  if (document.getElementById('dry_wine').value == 'other')
+  { else {
+        document.getElementById('dry_wine').style.display = 'none';
+    }
+  }
+  }
+
+    </script>
+</head>
+  <body>
+    <p>Need help selecting a wine?</p>
+    <p id="wine_type">Do you prefer dry or sweet wine:
+      <select id="wine" id='wineType' name="wineType" onchange="wineAction();">
+        <option value="Neither? Perhaphs you'd perfer a more blanced wine. Such as the Abacela Tempranillo"></option>
+        <option value="The Enrico Pierazzuoli Reserva Chianti from Italy">dry</option>
+        <option value="The Melville Pinot Noir from Santa Rita Hills in California">sweet</option>
+      </select>
+    </p>
+      <input id="other_wine" type="text" name="other" style="display: none">
+    </div>
+    <p id="answer"></p>
+    <br/>
+
+
+    <script>
+      function wineAction() {
+        var wineStyle = document.getElementById("wine").value;
+        document.getElementById("answer").innerHTML = "You perfect wine is: " + wineStyle;
+      }
+    </script>
+</body>
+<!-- end of wine selector -->
+      </div>
         <!-- this is where the table ends -->
       </div>
     </div> <!-- /container -->
@@ -398,5 +453,5 @@ tr:nth-child(odd) {
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-<a href="#Top of page">Top of page</a>
+<a href="#TopOfPage">Top of Page</a>
 </html>

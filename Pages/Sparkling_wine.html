@@ -106,8 +106,8 @@ tr:nth-child(odd) {
             <th>Name</th>
             <th>Location</th>
             <th>Year</th>
-            <th>Dine-in Price</th>
-            <th>To-go Price</th>
+            <th class="text-right">Dine-in Price</th>
+            <th class="text-right">To-go Price</th>
           </tr>
           <!-- Champagne/Sparkling -->
           <tr>
@@ -189,7 +189,59 @@ tr:nth-child(odd) {
       <div>
         <a onclick="changeColor()" class="btn btn-lg btn-success" role="button">Items that are on sale</a>
       </div>
-        <!-- this is where the table ends -->
+      <!-- Start of wine finder -->
+            <div>
+            </br>
+      <head>
+        <script>
+        function wineAction()
+        {
+        var wineStyle = document.getElementById('wine');
+        wineStyle.style.display = 'block';
+        var a = document.getElementById('wineType');
+        if (a.value == 'dry') {
+          document.getElementById('dry_wine').style.display = 'block';
+          document.getElementById('sweet_wine').style.display = 'none';
+        } else {
+          document.getElementById('dry_wine').style.display = 'none';
+          document.getElementById('sweet_wine').style.display = 'block';
+        }
+        // disable other
+        }
+
+        function toggleOther() {
+        if (document.getElementById('dry_wine').value == 'other')
+        { else {
+              document.getElementById('dry_wine').style.display = 'none';
+          }
+        }
+        }
+
+          </script>
+      </head>
+        <body>
+          <p>Need help selecting a wine?</p>
+          <p id="wine_type">Do you prefer dry or sweet wine:
+            <select id="wine" id='wineType' name="wineType" onchange="wineAction();">
+              <option value="Neither? Perhaphs you'd perfer a more blanced wine. Such as the Hugo	from Austria"></option>
+              <option value="The Gremillet Blanc de Noris	from France">dry</option>
+              <option value="The Sip Moscato form Sonoma County in California">sweet</option>
+            </select>
+          </p>
+            <input id="other_wine" type="text" name="other" style="display: none">
+          </div>
+          <p id="answer"></p>
+          <br/>
+
+
+          <script>
+            function wineAction() {
+              var wineStyle = document.getElementById("wine").value;
+              document.getElementById("answer").innerHTML = "You perfect wine is: " + wineStyle;
+            }
+          </script>
+      </body>
+      <!-- end of wine selector -->
       </div>
     </div> <!-- /container -->
 
