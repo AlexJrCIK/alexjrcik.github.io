@@ -81,7 +81,6 @@
       </div>
     </nav>
 
-
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
@@ -95,23 +94,18 @@
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
           }
-
           function checkInputBox() {
             var email = document.getElementById( 'Email-vaification' ).value;
             var style = document.getElementById( 'Email-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
             var valid = validateEmail( email );
             /* upate border of s1 */
-
             var submitStyle = document.getElementById( 'button' ).style;
-
-
             if (valid == true) {
               style.border = "2px solid #00ff00";
             } else {
               style.border = "2px solid #ff0000";
             }
           }
-
         </script>
           <!-- Java script ends here -->
         <div class="form-group">
@@ -140,71 +134,79 @@
           }
         </script>
         <!-- this is where the form ends -->
+        </br>
+        </br>
+          <div class="row">
+              <div class="col-sm-6">
+                GC MARKETPLACE</br>
+                3315 Cahuenga Blvd W</br>
+                Los Angeles, CA 90068</br>
+                Phone: 323-645-5269</br></br>
+                HOURS OF OPERATION</br>
+                INFORMATION</br>
+                <strong>MONDAY THROUGH FRIDAY</strong></br>
+                BREAKFAST 9AM – 11AM</br>
+                LUNCH 11AM – 4PM</br>
+                </br>
+                <strong>SATURDAY</strong></br>
+                BRUNCH 9AM – 2PM</br>
+                LUNCH 11AM – 4PM</br>
+                </br>
+                <strong>SUNDAY</strong></br>
+                CLOSED</br></br>
+              </div>
 
-        <!-- Imbeded map -->
-</br>
-</br>
-        <div class="row">
-            <div class="col-sm-6">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.620679934104!2d-118.35284684993943!3d34.13045942095767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2be53c9e826c1%3A0x6dfdcec6313c5f45!2sGC+Marketplace!5e0!3m2!1sen!2sus!4v1493277010421" width="400" height="300" frameborder="0" style="border:0" allowfullscreen>
-              </iframe>
-            </br></br>
-              <!-- start of modle -->
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+              <style>
+                  .google-maps {
+                      position: relative;
+                      padding-bottom: 75%; // This is the aspect ratio
+                      height: 0;
+                      overflow: hidden;
+                  }
+                  .google-maps iframe {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100% !important;
+                      height: 100% !important;
+                  }
+              </style>
+              <div class="col-sm-6">
+              <!-- Imbeded map -->
+              <div class="google-maps">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.620853423931!2d-118.35284148478287!3d34.130454980584815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2be53c9e826c1%3A0x6dfdcec6313c5f45!2sGC+Marketplace!5e0!3m2!1sen!2sus!4v1494365391875" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+              </br>
+                <!-- start of modle -->
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal">Enlarge map</button>
+                  <!-- Trigger the modal with a button -->
+                  <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal">Enlarge map</button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">GC Marketplace</h4>
-                      </div>
-                      <div class="modal-body">
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.620853423931!2d-118.35284148478287!3d34.130454980584815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2be53c9e826c1%3A0x6dfdcec6313c5f45!2sGC+Marketplace!5e0!3m2!1sen!2sus!4v1493279662859" width="800" height="600" frameborder="0" style="border:0" allowfullscreen>
-                        </iframe>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">GC Marketplace</h4>
+                        </div>
+                        <div class="google-maps" class="modal-body">
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.620853423931!2d-118.35284148478287!3d34.130454980584815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2be53c9e826c1%3A0x6dfdcec6313c5f45!2sGC+Marketplace!5e0!3m2!1sen!2sus!4v1494365391875" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
-              <!-- end modal -->
-          <div class="container">
-            <div class="col-sm-6">
-              GC MARKETPLACE</br>
-              3315 Cahuenga Blvd W</br>
-              Los Angeles, CA 90068</br>
-              Phone: 323-645-5269</br></br>
-              HOURS OF OPERATION</br>
-              INFORMATION</br>
-              <strong>MONDAY THROUGH FRIDAY</strong></br>
-              BREAKFAST 9AM – 11AM</br>
-              LUNCH 11AM – 4PM</br>
-              </br>
-              <strong>SATURDAY</strong></br>
-              BRUNCH 9AM – 2PM</br>
-              LUNCH 11AM – 4PM</br>
-              </br>
-              <strong>SUNDAY</strong></br>
-              CLOSED</br>
-            </div>
-          </div>
           </div>
         </div>
-      </div>
-    </div>
 <!-- /container -->
 
 
