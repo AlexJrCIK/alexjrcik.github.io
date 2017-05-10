@@ -13,7 +13,6 @@
     <link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="./favicons/manifest.json">
     <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="icon" href="./favicon.ico">
     <meta name="theme-color" content="#ffffff">
 
     <title>GC Marketplace Wine Finder!</title>
@@ -25,7 +24,7 @@
     <link href="./assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./navbar-static-top.css" rel="stylesheet">
+    <!-- dead link <link href="./navbar-static-top.css" rel="stylesheet">-->
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="./assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -76,7 +75,7 @@
               </ul>
             </li>
           </ul>
-<!-- end off righ side dropdown -->
+<!-- end off right side dropdown -->
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -91,43 +90,70 @@
         <p>If you'd like to stay updated on all of our up-coming events, sign up with your name and email below!</p>
         <!-- This is where the form starts -->
         <!-- Java scirpt starts here -->
-          <script>
-            function validateEmail(email) {
-              var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-              return re.test(email);
+        <!--email validater -->
+        <script>
+          function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+          }
+
+          function checkInputBoxE() {
+            var email = document.getElementById( 'Email-vaification' ).value;
+            var style = document.getElementById( 'Email-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
+            var valid = validateEmail( email );
+            /* upate border of s1 */
+
+            var submitStyle = document.getElementById( 'button' ).style;
+
+
+            if (valid == true) {
+              style.border = "2px solid #00ff00";
+            } else {
+              style.border = "2px solid #ff0000";
             }
+          }
 
-            function checkInputBox() {
-              var email = document.getElementById( 'Email-vaification' ).value;
-              var style = document.getElementById( 'Email-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
-              var valid = validateEmail( email );
-              /* upate border of s1 */
+        </script>
+        <!-- name validater -->
+        <script>
+          function validateName(name) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(name);
+          }
 
-              var submitStyle = document.getElementById( 'button' ).style;
+          function checkInputBoxN() {
+            var name = document.getElementById( 'Name-vaification' ).value;
+            var style = document.getElementById( 'Name-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
+            var valid = validateName( name );
+            /* upate border of s1 */
+
+            var submitStyle = document.getElementById( 'button' ).style;
 
 
-              if (valid == true) {
-                style.border = "2px solid #00ff00";
-              } else {
-                style.border = "2px solid #ff0000";
-              }
+            if (valid == true) {
+              style.border = "2px solid #00ff00";
+            } else {
+              style.border = "2px solid #ff0000";
             }
+          }
 
-          </script>
+        </script>
           <!-- Java script ends here -->
           <div class="form-group">
             <label for="Email-vaification" name="email">Email address</label>
             <input type="email" class="form-control" id="Email-vaification" placeholder="Email"
-                   style="" onkeypress="checkInputBox()"> <!-- id="exampleInputEmail1" -->
+                   style="" onkeypress="checkInputBoxE()">
           </div>
           <div class="form-group">
-            <label for="exampleInputName">Name</label>
-            <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+            <label for="Name-vaification" name="email">Name</label>
+            <input type="name" class="form-control" id="Name-vaification" placeholder="Name"
+                   style="" onkeypress="checkInputBoxN()">
           </div>
           <a id="button" onclick="Submit()" class="btn btn-lg btn-success" role="button">Sign up for our mailing list!</a>
           <!-- form javascript -->
           <script>
             function Submit() {
+              checkInputBox ();
             alert("Thanks for subscribing to our news letter!");
             }
           </script>
@@ -138,7 +164,7 @@
           <div class="embed-responsive embed-responsive-16by9" allowfullscreen>
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3gHrv1CwiWw"></iframe>
           </div>
-        </br> <!-- https://www.youtube.com/embed/3gHrv1CwiWw -->
+        </br>
       </div>
 <!-- stopwatch -->
       </br>
@@ -204,7 +230,6 @@
     <script src="./dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="./JS/Style.js"></script>
   </body>
 <a href="#Top of page">Top of page</a>
 </html>
