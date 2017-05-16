@@ -36,9 +36,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -81,13 +79,25 @@
     </nav>
 
     <div class="container">
-
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Welcome!</h1>
+        <h1 id="welcome">Welcome!</h1> <!-- fade in and out example -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#goodBye").click(function(){
+                $("p").fadeOut()
+            });
+            $("#welcome").click(function(){
+                $("p").fadeIn();
+            });
+        });
+        </script>
+        <!-- end of fade example -->
         <p>This is the GC Marketplace Wine finder. Designed to help you find the perfect wine!</p>
         <p>To get started, just click the tab that has your favorite color wine and select your ideal wine by navigating the tables.</p>
-        <p>If you'd like to stay updated on all of our up-coming events, sign up with your name and email below!</p>
+        <p id="goodBye">If you'd like to stay updated on all of our up-coming events, sign up with your name and email below!</p>
         <!-- This is where the form starts -->
         <!-- Java scirpt starts here -->
         <!--email validater -->
@@ -96,65 +106,67 @@
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
           }
-
           function checkInputBoxE() {
             var email = document.getElementById( 'Email-vaification' ).value;
-            var style = document.getElementById( 'Email-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
+            var style = document.getElementById( 'Email-vaification' ).style;
             var valid = validateEmail( email );
             /* upate border of s1 */
-
             var submitStyle = document.getElementById( 'button' ).style;
-
-
             if (valid == true) {
               style.border = "2px solid #00ff00";
             } else {
               style.border = "2px solid #ff0000";
             }
           }
-
         </script>
         <!-- name validater -->
         <script>
           function validateName(name) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var re = /^[a-zA-Z ]{2,30}$/;
             return re.test(name);
           }
-
           function checkInputBoxN() {
             var name = document.getElementById( 'Name-vaification' ).value;
-            var style = document.getElementById( 'Name-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
+            var style = document.getElementById( 'Name-vaification' ).style;
             var valid = validateName( name );
             /* upate border of s1 */
-
-            var submitStyle = document.getElementById( 'button' ).style;
-
-
+            //var submitStyle = document.getElementById( 'button' ).style;
             if (valid == true) {
               style.border = "2px solid #00ff00";
             } else {
               style.border = "2px solid #ff0000";
             }
-          }
-
+            }
         </script>
           <!-- Java script ends here -->
+        <form>
           <div class="form-group">
             <label for="Email-vaification" name="email">Email address</label>
             <input type="email" class="form-control" id="Email-vaification" placeholder="Email"
                    style="" onkeypress="checkInputBoxE()">
           </div>
           <div class="form-group">
-            <label for="Name-vaification" name="email">Name</label>
+            <label for="Name-vaification" name="name">Name</label>
             <input type="name" class="form-control" id="Name-vaification" placeholder="Name"
                    style="" onkeypress="checkInputBoxN()">
           </div>
-          <a id="button" onclick="Submit()" class="btn btn-lg btn-success" role="button">Sign up for our mailing list!</a>
-          <!-- form javascript -->
+          <a id="button" onclick="valuedInput()" class="btn btn-lg btn-success" role="button">Sign up here!</a>
+        </form>
+          <!-- button java -->
           <script>
-            function Submit() {
-              checkInputBox ();
-            alert("Thanks for subscribing to our news letter!");
+            function valuedInput() {
+              var name = document.getElementById( 'Name-vaification' ).value;
+              var style = document.getElementById( 'Name-vaification' ).style;
+              var valid = validateName( name );
+              var email = document.getElementById( 'Email-vaification' ).value;
+              var style = document.getElementById( 'Email-vaification' ).style;
+              var valid = validateEmail( email );
+
+              if (valid == true) {
+                alert('Thanks for subscribing to our news letter!');
+              } else {
+                alert('Sorry, one or more of your feilds are wrong.');
+              }
             }
           </script>
         <!-- this is where the form ends -->
@@ -167,8 +179,19 @@
         </br>
       </div>
 <!-- stopwatch -->
-      </br>
-      <div>
+      <!-- animate example -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+      $(document).ready(function(){
+          $("#stopWatchB").click(function(){
+              $("#stopWatch").animate({
+                  height: 'toggle'
+              });
+          });
+      });
+      </script>
+      <!-- end of animate example -->
+      <div id="stopWatch">
         <p>Curious as to how long your food is taking? Keep track here!</p>
         <h2><time>00:00:00</time></h2>
       </br>
@@ -176,6 +199,11 @@
         <a id="stop" class="btn btn-lg btn-success" role="button">Stop</a>
         <a id="clear" class="btn btn-lg btn-success" role="button">Clear</a>
       </div>
+        </br>
+      <div>
+        <button id="stopWatchB" class="btn btn-lg btn-success">Hide counter</button> <!-- animate button -->
+      </div>
+      <!-- button scripts -->
       <script>
         var h2 = document.getElementsByTagName('h2')[0],
         start = document.getElementById('start'),

@@ -144,7 +144,7 @@ tr:nth-child(odd) {
             <td align="right">$22.50</td>
           </tr>
           <tr>
-            <td><acronym title="Moscato">Sparkling</acronym></td>
+            <td id ="popular7"><acronym title="Moscato">Sparkling</acronym></td>
             <td class="OnSale">Sip</td>
             <td>CA, Sonoma County</td>
             <td>2014</td>
@@ -160,7 +160,7 @@ tr:nth-child(odd) {
             <td align="right">$22.50</td>
           </tr>
           <tr>
-            <td><acronym title="">Sparkling</acronym></td>
+            <td id ="popular8"><acronym title="">Sparkling</acronym></td>
             <td class="OnSale">Underwood Can 375mL</td>
             <td>OR</td>
             <td>2015</td>
@@ -177,7 +177,7 @@ tr:nth-child(odd) {
             <td align="right">$27.00</td>
           </tr>
           <tr>
-            <td><acronym title="Brut">Sparkling/Ros&#232</acronym></td>
+            <td id ="popular9"><acronym title="Brut">Sparkling/Ros&#232</acronym></td>
             <td class="OnSale">Andrè Delorme Reserve</td>
             <td>Austria</td>
             <td>NV</td>
@@ -185,10 +185,45 @@ tr:nth-child(odd) {
             <td align="right">$18.75</td>
           </tr>
         </div>
+        <!-- toggle example -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#hideSelector").click(function(){
+                $("#selector").toggle();
+            });
+        });
+        </script>
+        <!-- end of toggle example -->
       </table>
     </div>
+    <!-- add class example -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script>
+     $(document).ready(function(){
+         $("#mostPopular").click(function(){
+             $("#popular7").addClass("blue");
+             $("#popular8").addClass("blue");
+             $("#popular9").addClass("blue");
+         });
+     });
+     </script>
+     <style>
+     .blue {
+         color: blue;
+     }
+     </style>
+     <!-- end of add class example -->
+      <div>
+        <a id="mostPopular" class="btn btn-lg btn-success" role="button">Most popular items</a>
+      </div>
+        </br>
       <div>
         <a onclick="changeColor()" class="btn btn-lg btn-success" role="button">Items that are on sale</a>
+      </div>
+        </br>
+      <div>
+        <a id="hideSelector" class="btn btn-lg btn-success" role="button">Hide selector</a>
       </div>
       <!-- Start of wine finder -->
             <div>
@@ -217,7 +252,7 @@ tr:nth-child(odd) {
 
           </script>
       </head>
-        <body>
+        <div id="selector">
           <p>Need help selecting a wine?</p>
           <p id="wine_type">Do you prefer dry or sweet wine:
             <select id="wine" id='wineType' name="wineType" onchange="wineAction();">
@@ -231,16 +266,16 @@ tr:nth-child(odd) {
           <p id="answer"></p>
           <br/>
 
-
           <script>
             function wineAction() {
               var wineStyle = document.getElementById("wine").value;
               document.getElementById("answer").innerHTML = "You perfect wine is: " + wineStyle;
             }
           </script>
-      </body>
+      </div>
       <!-- end of wine selector -->
       </div>
+      
     </div> <!-- /container -->
 
     <!-- Javascript -->

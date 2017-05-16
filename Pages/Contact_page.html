@@ -84,18 +84,19 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Contact us!</h1>
-        <p>This is where you can leave us feedback as to how we are doing!</p>
+        <h1 id="slideContact">Contact us!</h1>
+        <p >This is where you can leave us feedback as to how we are doing!</p>
         <!-- This is where the form starts -->
         <!-- Java scirpt starts here -->
+        <!--email validater -->
         <script>
           function validateEmail(email) {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
           }
-          function checkInputBox() {
+          function checkInputBoxE() {
             var email = document.getElementById( 'Email-vaification' ).value;
-            var style = document.getElementById( 'Email-vaification' ).style; /* 'style' is an object of element with the id '0xff' */
+            var style = document.getElementById( 'Email-vaification' ).style;
             var valid = validateEmail( email );
             /* upate border of s1 */
             var submitStyle = document.getElementById( 'button' ).style;
@@ -106,30 +107,108 @@
             }
           }
         </script>
+        <!-- name validater -->
+        <script>
+          function validateName(name) {
+            var re = /^[a-zA-Z ]{2,30}$/;
+            return re.test(name);
+          }
+          function checkInputBoxN() {
+            var name = document.getElementById( 'Name-vaification' ).value;
+            var style = document.getElementById( 'Name-vaification' ).style;
+            var valid = validateName( name );
+            /* upate border of s1 */
+            var submitStyle = document.getElementById( 'button' ).style;
+            if (valid == true) {
+              style.border = "2px solid #00ff00";
+            } else {
+              style.border = "2px solid #ff0000";
+            }
+          }
+        </script>
+        <!-- subject validater -->
+        <script>
+          function validateSubject(subject) {
+            var re = /^[a-zA-Z ]{2,30}$/;
+            return re.test(subject);
+          }
+          function checkInputBoxS() {
+            var subject = document.getElementById( 'Subject-vaification' ).value;
+            var style = document.getElementById( 'Subject-vaification' ).style;
+            var valid = validateSubject( subject );
+            /* upate border of s1 */
+            var submitStyle = document.getElementById( 'button' ).style;
+            if (valid == true) {
+              style.border = "2px solid #00ff00";
+            } else {
+              style.border = "2px solid #ff0000";
+            }
+          }
+        </script>
+        <!-- body validater -->
+        <script>
+          function validateBody(body) {
+            var re = /^[a-zA-Z ]{2,30}$/;
+            return re.test(body);
+          }
+          function checkInputBoxB() {
+            var body = document.getElementById( 'Body-vaification' ).value;
+            var style = document.getElementById( 'Body-vaification' ).style;
+            var valid = validateSubject( body );
+            /* upate border of s1 */
+            var submitStyle = document.getElementById( 'button' ).style;
+            if (valid == true) {
+              style.border = "2px solid #00ff00";
+            } else {
+              style.border = "2px solid #ff0000";
+            }
+          }
+        </script>
           <!-- Java script ends here -->
+        <form id="contact">
         <div class="form-group">
-          <label for="exampleInputName">Name</label>
-          <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+          <label for="Name-vaification" name="name">Name</label>
+          <input type="name" class="form-control" id="Name-vaification" placeholder="Name"
+                 style="" onkeypress="checkInputBoxN()">
         </div>
         <div class="form-group">
           <label for="Email-vaification" name="email">Email address</label>
           <input type="email" class="form-control" id="Email-vaification" placeholder="Email"
-                 style="" onkeypress="checkInputBox()"> <!-- id="exampleInputEmail1" -->
+                 style="" onkeypress="checkInputBoxE()">
         </div>
-          <div class="form-group">
-            <label for="exampleInputSubject">Subject</label>
-            <input type="text" class="form-control" id="exampleInputSubject" placeholder="Subject">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputName">Body</label>
-            <input type="text" class="form-control" id="exampleInputBody" placeholder="Body">
-          </div>
+        <div class="form-group">
+          <label for="Subject-vaification" name="subject">Subject</label>
+          <input type="subject" class="form-control" id="Subject-vaification" placeholder="Subject"
+                 style="" onkeypress="checkInputBoxS()">
+        </div>
+        <div class="form-group">
+          <label for="Body-vaification" name="body">Body</label>
+          <input type="body" class="form-control" id="Body-vaification" placeholder="Body"
+                 style="" onkeypress="checkInputBoxB()">
+        </div>
           <a id="button" onclick="valuedInput()" class="btn btn-lg btn-success" role="button">Submit!</a>
         </form>
         <!-- form javascript -->
         <script>
           function valuedInput() {
-          alert("Thanks for your input!");
+            var name = document.getElementById( 'Name-vaification' ).value;
+            var style = document.getElementById( 'Name-vaification' ).style;
+            var valid = validateName( name );
+            var subject = document.getElementById( 'Subject-vaification' ).value;
+            var style = document.getElementById( 'Subject-vaification' ).style;
+            var valid = validateSubject( subject );
+            var body = document.getElementById( 'Body-vaification' ).value;
+            var style = document.getElementById( 'Body-vaification' ).style;
+            var valid = validateSubject( body );
+            var email = document.getElementById( 'Email-vaification' ).value;
+            var style = document.getElementById( 'Email-vaification' ).style;
+            var valid = validateEmail( email );
+
+            if (valid == true) {
+              alert('Thanks for your valued input!');
+            } else {
+              alert('Sorry, one or more of your feilds are wrong.');
+            }
           }
         </script>
         <!-- this is where the form ends -->
@@ -170,7 +249,7 @@
                       height: 100% !important;
                   }
               </style>
-              <div class="container">
+              <!-- <div class="container"> -->
               <div class="col-sm-6">
               <!-- Imbeded map -->
               <div class="google-maps">
@@ -206,16 +285,26 @@
                   </div>
               </div>
           </div>
+          <!-- slide example -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script>
+          $(document).ready(function(){
+              $("#slideContact").click(function(){
+                  $("#contact").css("color", "red").slideUp(2000).slideDown(2000);
+              });
+          });
+          </script>
+          <!-- end of slide example -->
         </div>
       </div>
-    </div>
+    <!-- </div> -->
 <!-- container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

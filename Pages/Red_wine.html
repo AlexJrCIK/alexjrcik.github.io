@@ -119,7 +119,7 @@ tr:nth-child(odd) {
           <td align="right">$90.00</td>
         </tr>
         <tr>
-          <td>Cabernet Sauvignon</td>
+          <td id="popular1">Cabernet Sauvignon</td>
           <td class="OnSale">Christopher Michael</td>
           <td>WA</td>
           <td>2014</td>
@@ -144,7 +144,7 @@ tr:nth-child(odd) {
           <td align="right">$36.00</td>
         </tr>
         <tr>
-          <td>Pinot Noir</td>
+          <td id="popular2">Pinot Noir</td>
           <td>Melville</td>
           <td>CA, Santa Rita Hills</td>
           <td>2013</td>
@@ -227,7 +227,7 @@ tr:nth-child(odd) {
           <td align="right">$33.75</td>
         </tr>
         <tr>
-          <td><acronym title="Syrah, Merlot, Cabernet Franc">Blend</acronym></td>
+          <td id="popular3"><acronym title="Syrah, Merlot, Cabernet Franc">Blend</acronym></td>
           <td>Brave & Maiden "Union"</td>
           <td>CA, Santa Ynez</td>
           <td>2011</td>
@@ -324,7 +324,7 @@ tr:nth-child(odd) {
           <td align="right">$37.50</td>
         </tr>
         <tr>
-          <td><acronym title="Chianti">Other</acronym></td>
+          <td id="chianti"><acronym title="Chianti">Other</acronym></td>
           <td>Enrico Pierazzuoli Reserva</td>
           <td>Italy</td>
           <td>2011</td>
@@ -348,7 +348,7 @@ tr:nth-child(odd) {
           <td align="right">$27.00</td>
         </tr>
         <tr>
-          <td><acronym title="Zinfadel">Other</acronym></td>
+          <td id="zinfadel"><acronym title="Zinfadel">Other</acronym></td>
           <td>Sbragia Gino</td>
           <td>CA, Sonoma County</td>
           <td>2012</td>
@@ -356,7 +356,7 @@ tr:nth-child(odd) {
           <td align="right">$27.00</td>
         </tr>
         <tr>
-          <td><acronym title="Zweigelt">Other</acronym></td>
+          <td id="zweigelt"><acronym title="Zweigelt">Other</acronym></td>
           <td>Lenz Moser</td>
           <td>Austria</td>
           <td>2010</td>
@@ -364,15 +364,49 @@ tr:nth-child(odd) {
           <td align="right">$23.25</td>
         </tr>
         </div>
+        <!-- toggle example -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#hideSelector").click(function(){
+                $("#selector").toggle();
+            });
+        });
+        </script>
+        <!-- end of toggle example -->
       </table>
     </div>
+       <!-- add class example -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#mostPopular").click(function(){
+                $("#popular1").addClass("blue");
+                $("#popular2").addClass("blue");
+                $("#popular3").addClass("blue");
+            });
+        });
+        </script>
+        <style>
+        .blue {
+            color: blue;
+        }
+        </style>
+        <!-- end of add class example -->
+      <div>
+        <a id="mostPopular" class="btn btn-lg btn-success" role="button">Most popular items</a>
+      </div>
+    </br>
       <div>
         <a onclick="changeColor()" class="btn btn-lg btn-success" role="button">Items that are on sale</a>
+      </div>
+    </br>
+      <div>
+        <a id="hideSelector" class="btn btn-lg btn-success" role="button">Hide selector</a>
       </div>
 <!-- Start of wine finder -->
       <div>
       </br>
-<head>
   <script>
   function wineAction()
   {
@@ -395,8 +429,7 @@ tr:nth-child(odd) {
   }
 
     </script>
-</head>
-  <body>
+  <div id="selector">
     <p>Need help selecting a wine?</p>
     <p id="wine_type">Do you prefer dry or sweet wine:
       <select id="wine" id='wineType' name="wineType" onchange="wineAction();">
@@ -410,20 +443,18 @@ tr:nth-child(odd) {
     <p id="answer"></p>
     <br/>
 
-
     <script>
       function wineAction() {
         var wineStyle = document.getElementById("wine").value;
         document.getElementById("answer").innerHTML = "You perfect wine is: " + wineStyle;
       }
     </script>
-</body>
-<!-- end of wine selector -->
+</div>
+      <!-- end of wine selector -->
       </div>
-        <!-- this is where the table ends -->
+      <!-- this is where the table ends -->
       </div>
     </div> <!-- /container -->
-
     <!-- Javascript -->
     <script>
     function changeColor() {
